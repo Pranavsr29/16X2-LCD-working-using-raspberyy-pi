@@ -10,5 +10,5 @@ Make sure u have the following componenets before proceeding
    
 Solder ur pi onto the breadboard and make the following connections
 
-Follow the connections page to make the proper connections then check out the module pg to download the required modules onto ur pi and then 
+Follow the connections page to make the proper connections then create a folder called lcd and store the python code in a python shell called lcd.py 
 Check out the code files to add it onto ur pi 
