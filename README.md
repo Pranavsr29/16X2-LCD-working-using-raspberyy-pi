@@ -10,5 +10,6 @@ Make sure u have the following componenets before proceeding
    
 Solder ur pi onto the breadboard and make the following connections
 
-Follow the connections page to make the proper connections then create a folder called lcd and store the python code in a python shell called lcd.py 
+Follow the connections page to make the proper connections then create a folder called lcd and store the python code1 in a python shell called lcd.py 
+and then follow steps in code2
 Check out the code files to add it onto ur pi 
