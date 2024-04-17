@@ -2,12 +2,12 @@ import RPi.GPIO as GPIO
 import time
  
 # Define GPIO to LCD mapping
-LCD_RS = 7
-LCD_E  = 8
-LCD_D4 = 25
-LCD_D5 = 24
-LCD_D6 = 23
-LCD_D7 = 18
+LCD_RS = 26
+LCD_E  = 19
+LCD_D4 = 13
+LCD_D5 = 6
+LCD_D6 = 5
+LCD_D7 = 11
  
 # Define some device constants
 LCD_WIDTH = 16    # Maximum characters per line
@@ -23,15 +23,7 @@ E_DELAY = 0.0005
  
 def main():
   # Main program block
-  GPIO.setwarnings(False)
-  GPIO.setmode(GPIO.BCM)       # Use BCM GPIO numbers
-  GPIO.setup(LCD_E, GPIO.OUT)  # E
-  GPIO.setup(LCD_RS, GPIO.OUT) # RS
-  GPIO.setup(LCD_D4, GPIO.OUT) # DB4
-  GPIO.setup(LCD_D5, GPIO.OUT) # DB5
-  GPIO.setup(LCD_D6, GPIO.OUT) # DB6
-  GPIO.setup(LCD_D7, GPIO.OUT) # DB7
- 
+  GPIO.setwarnings(False) 
   # Initialise display
   lcd_init()
  
@@ -55,13 +47,17 @@ def main():
  
     time.sleep(3)
  
-    # Send some text
-    lcd_string("Follow me on",LCD_LINE_1)
-    lcd_string("Twitter @RPiSpy",LCD_LINE_2)
  
     time.sleep(3)
  
 def lcd_init():
+  GPIO.setmode(GPIO.BCM)       # Use BCM GPIO numbers
+  GPIO.setup(LCD_E, GPIO.OUT)  # E
+  GPIO.setup(LCD_RS, GPIO.OUT) # RS
+  GPIO.setup(LCD_D4, GPIO.OUT) # DB4
+  GPIO.setup(LCD_D5, GPIO.OUT) # DB5
+  GPIO.setup(LCD_D6, GPIO.OUT) # DB6
+  GPIO.setup(LCD_D7, GPIO.OUT) # DB7
   # Initialise display
   lcd_byte(0x33,LCD_CMD) # 110011 Initialise
   lcd_byte(0x32,LCD_CMD) # 110010 Initialise
